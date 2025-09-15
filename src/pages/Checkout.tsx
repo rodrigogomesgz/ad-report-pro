@@ -8,8 +8,8 @@ export function Checkout() {
   const nav = useNav();
 
   const handleStartTest = async () => {
-    // TODO: Integrate with Stripe Checkout
     // For MVP, redirect directly to connect page
+    // TODO: Implement Stripe checkout with price_1S7Vg62O4iFMZs6oQkZkD5fU
     nav.push("/connect");
   };
 
