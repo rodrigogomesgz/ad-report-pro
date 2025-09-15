@@ -2,14 +2,15 @@ import { Card, Title, Text, TextInput, Textarea } from "@mantine/core";
 import { Button } from "@/components/atoms/button";
 import { ArrowLeft, Mail, MessageSquare, Phone } from "lucide-react";
 import { useNav } from "@/lib/navigation";
+import { Header } from "@/components/organisms/header";
+import { Footer } from "@/components/organisms/footer";
 
 export function Contato() {
   const nav = useNav();
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
-      {/* Header espaçamento */}
-      <div className="h-16"></div>
+    <div className="min-h-screen bg-background">
+      <Header />
       
       <div className="container mx-auto px-4 py-16">
         {/* Back Button */}
@@ -32,7 +33,7 @@ export function Contato() {
 
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
           {/* Formulário */}
-          <Card className="p-8 shadow-medium">
+          <Card className="p-8 shadow-subtle hover:shadow-medium transition-all duration-300">
             <Title order={2} className="text-2xl font-bold text-foreground mb-6">
               Envie sua mensagem
             </Title>
@@ -80,7 +81,7 @@ export function Contato() {
 
           {/* Informações de contato */}
           <div className="space-y-8">
-            <Card className="p-6">
+            <Card className="p-6 shadow-subtle hover:shadow-hover transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                   <Mail className="w-6 h-6 text-blue-600" />
@@ -100,7 +101,7 @@ export function Contato() {
               </div>
             </Card>
 
-            <Card className="p-6">
+            <Card className="p-6 shadow-subtle hover:shadow-hover transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                   <MessageSquare className="w-6 h-6 text-green-600" />
@@ -121,7 +122,7 @@ export function Contato() {
               </div>
             </Card>
 
-            <Card className="p-6">
+            <Card className="p-6 shadow-subtle hover:shadow-hover transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
                   <Phone className="w-6 h-6 text-purple-600" />
@@ -154,6 +155,7 @@ export function Contato() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -2,6 +2,8 @@ import { Card, Title, Text } from "@mantine/core";
 import { Button } from "@/components/atoms/button";
 import { ArrowLeft, Book, Video, MessageSquare, FileText } from "lucide-react";
 import { useNav } from "@/lib/navigation";
+import { Header } from "@/components/organisms/header";
+import { Footer } from "@/components/organisms/footer";
 
 export function Documentacao() {
   const nav = useNav();
@@ -58,9 +60,8 @@ export function Documentacao() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
-      {/* Header espaçamento */}
-      <div className="h-16"></div>
+    <div className="min-h-screen bg-background">
+      <Header />
       
       <div className="container mx-auto px-4 py-16">
         {/* Back Button */}
@@ -106,7 +107,7 @@ export function Documentacao() {
             {docs.map((doc, index) => {
               const IconComponent = doc.icon;
               return (
-                <Card key={index} className="p-6">
+                <Card key={index} className="p-6 shadow-subtle hover:shadow-hover transition-all duration-300">
                   <div className="flex items-start space-x-4 mb-4">
                     <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${doc.color}`}>
                       <IconComponent className="w-6 h-6" />
@@ -145,7 +146,7 @@ export function Documentacao() {
             </Title>
             
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <Card className="p-6 text-center">
+              <Card className="p-6 text-center shadow-subtle hover:shadow-hover transition-all duration-300">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <MessageSquare className="w-8 h-8 text-green-600" />
                 </div>
@@ -163,7 +164,7 @@ export function Documentacao() {
                 </Button>
               </Card>
 
-              <Card className="p-6 text-center">
+              <Card className="p-6 text-center shadow-subtle hover:shadow-hover transition-all duration-300">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Video className="w-8 h-8 text-blue-600" />
                 </div>
@@ -184,6 +185,7 @@ export function Documentacao() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

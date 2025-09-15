@@ -2,6 +2,8 @@ import { Card, Title, Text } from "@mantine/core";
 import { Button } from "@/components/atoms/button";
 import { ArrowLeft, Zap, Puzzle, Code, ExternalLink } from "lucide-react";
 import { useNav } from "@/lib/navigation";
+import { Header } from "@/components/organisms/header";
+import { Footer } from "@/components/organisms/footer";
 
 export function Integracoes() {
   const nav = useNav();
@@ -54,9 +56,8 @@ export function Integracoes() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
-      {/* Header espaçamento */}
-      <div className="h-16"></div>
+    <div className="min-h-screen bg-background">
+      <Header />
       
       <div className="container mx-auto px-4 py-16">
         {/* Back Button */}
@@ -80,7 +81,7 @@ export function Integracoes() {
         {/* Integracoes Grid */}
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {integracoes.map((integracao, index) => (
-            <Card key={index} className="p-6 hover:shadow-medium transition-shadow">
+            <Card key={index} className="p-6 shadow-subtle hover:shadow-hover transition-all duration-300 cursor-pointer">
               <div className="flex items-start justify-between mb-4">
                 <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${integracao.color}`}>
                   <span className="font-bold text-sm">{integracao.icon}</span>
@@ -174,6 +175,7 @@ export function Integracoes() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

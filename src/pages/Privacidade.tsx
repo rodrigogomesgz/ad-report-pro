@@ -2,14 +2,15 @@ import { Card, Title, Text } from "@mantine/core";
 import { Button } from "@/components/atoms/button";
 import { ArrowLeft, Shield, Eye, Cookie, Lock } from "lucide-react";
 import { useNav } from "@/lib/navigation";
+import { Header } from "@/components/organisms/header";
+import { Footer } from "@/components/organisms/footer";
 
 export function Privacidade() {
   const nav = useNav();
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
-      {/* Header espaçamento */}
-      <div className="h-16"></div>
+    <div className="min-h-screen bg-background">
+      <Header />
       
       <div className="container mx-auto px-4 py-16">
         {/* Back Button */}
@@ -201,6 +202,7 @@ export function Privacidade() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

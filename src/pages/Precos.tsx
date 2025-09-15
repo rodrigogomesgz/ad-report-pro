@@ -2,14 +2,15 @@ import { Card, Title, Text } from "@mantine/core";
 import { Button } from "@/components/atoms/button";
 import { ArrowLeft, Check } from "lucide-react";
 import { useNav } from "@/lib/navigation";
+import { Header } from "@/components/organisms/header";
+import { Footer } from "@/components/organisms/footer";
 
 export function Precos() {
   const nav = useNav();
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
-      {/* Header espaçamento */}
-      <div className="h-16"></div>
+    <div className="min-h-screen bg-background">
+      <Header />
       
       <div className="container mx-auto px-4 py-16">
         {/* Back Button */}
@@ -33,7 +34,7 @@ export function Precos() {
 
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
           {/* Teste */}
-          <Card className="p-8 border-2 border-dashed border-border">
+          <Card className="p-8 border-2 border-dashed border-border hover:shadow-hover transition-all duration-300 cursor-pointer">
             <div className="text-center">
               <Text c="dimmed" size="sm" fw={600} className="mb-2">TESTE</Text>
               <div className="mb-4">
@@ -75,7 +76,7 @@ export function Precos() {
           </Card>
 
           {/* Mensal */}
-          <Card className="p-8 border-2 border-primary shadow-elegant">
+          <Card className="p-8 border-2 border-primary shadow-elegant hover:shadow-strong transition-all duration-300 cursor-pointer">
             <div className="text-center">
               <div className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold mb-4 inline-block">
                 MAIS POPULAR
@@ -127,6 +128,7 @@ export function Precos() {
           </Text>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

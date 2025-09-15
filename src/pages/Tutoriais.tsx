@@ -2,6 +2,8 @@ import { Card, Title, Text } from "@mantine/core";
 import { Button } from "@/components/atoms/button";
 import { ArrowLeft, Play, Clock, Users, Zap } from "lucide-react";
 import { useNav } from "@/lib/navigation";
+import { Header } from "@/components/organisms/header";
+import { Footer } from "@/components/organisms/footer";
 
 export function Tutoriais() {
   const nav = useNav();
@@ -58,9 +60,8 @@ export function Tutoriais() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
-      {/* Header espaçamento */}
-      <div className="h-16"></div>
+    <div className="min-h-screen bg-background">
+      <Header />
       
       <div className="container mx-auto px-4 py-16">
         {/* Back Button */}
@@ -133,7 +134,7 @@ export function Tutoriais() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {tutoriais.map((tutorial, index) => (
-                <Card key={index} className="overflow-hidden hover:shadow-medium transition-shadow">
+                <Card key={index} className="overflow-hidden shadow-subtle hover:shadow-hover transition-all duration-300 cursor-pointer">
                   {/* Thumbnail */}
                   <div className={`h-32 ${tutorial.thumbnail} flex items-center justify-center relative`}>
                     <Play className="w-12 h-12 text-white bg-black bg-opacity-50 rounded-full p-2" />
@@ -204,6 +205,7 @@ export function Tutoriais() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

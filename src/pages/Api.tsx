@@ -2,14 +2,15 @@ import { Card, Title, Text } from "@mantine/core";
 import { Button } from "@/components/atoms/button";
 import { ArrowLeft, Code, Key, Zap, Shield } from "lucide-react";
 import { useNav } from "@/lib/navigation";
+import { Header } from "@/components/organisms/header";
+import { Footer } from "@/components/organisms/footer";
 
 export function Api() {
   const nav = useNav();
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
-      {/* Header espaçamento */}
-      <div className="h-16"></div>
+    <div className="min-h-screen bg-background">
+      <Header />
       
       <div className="container mx-auto px-4 py-16">
         {/* Back Button */}
@@ -33,7 +34,7 @@ export function Api() {
 
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Status */}
-          <Card className="p-8 bg-yellow-50 border-yellow-200">
+          <Card className="p-8 bg-yellow-50 border-yellow-200 shadow-subtle hover:shadow-hover transition-all duration-300">
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
                 <Zap className="w-6 h-6 text-yellow-600" />
@@ -57,7 +58,7 @@ export function Api() {
             </Title>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="p-6">
+              <Card className="p-6 shadow-subtle hover:shadow-hover transition-all duration-300">
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
                     <Code className="w-5 h-5 text-blue-600" />
@@ -74,7 +75,7 @@ export function Api() {
                 </div>
               </Card>
 
-              <Card className="p-6">
+              <Card className="p-6 shadow-subtle hover:shadow-hover transition-all duration-300">
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
                     <Key className="w-5 h-5 text-green-600" />
@@ -91,7 +92,7 @@ export function Api() {
                 </div>
               </Card>
 
-              <Card className="p-6">
+              <Card className="p-6 shadow-subtle hover:shadow-hover transition-all duration-300">
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
                     <Zap className="w-5 h-5 text-purple-600" />
@@ -108,7 +109,7 @@ export function Api() {
                 </div>
               </Card>
 
-              <Card className="p-6">
+              <Card className="p-6 shadow-subtle hover:shadow-hover transition-all duration-300">
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
                     <Shield className="w-5 h-5 text-orange-600" />
@@ -133,7 +134,7 @@ export function Api() {
               Exemplo de Uso (Preview)
             </Title>
             
-            <Card className="p-6 bg-gray-900 text-white">
+            <Card className="p-6 bg-gray-900 text-white shadow-subtle hover:shadow-hover transition-all duration-300">
               <pre className="text-sm overflow-x-auto">
 {`// Gerar relatório via API
 const response = await fetch('https://api.relatorify.com/v1/reports', {
@@ -159,7 +160,7 @@ console.log('Relatório gerado:', report.download_url);`}
 
           {/* CTA */}
           <div className="text-center">
-            <Card className="p-8 max-w-2xl mx-auto">
+            <Card className="p-8 max-w-2xl mx-auto shadow-subtle hover:shadow-hover transition-all duration-300">
               <Title order={3} className="text-xl font-semibold mb-4">
                 Interessado na API?
               </Title>
@@ -178,6 +179,7 @@ console.log('Relatório gerado:', report.download_url);`}
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

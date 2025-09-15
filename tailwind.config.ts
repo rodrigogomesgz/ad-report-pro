@@ -75,6 +75,8 @@ export default {
         'subtle': 'var(--shadow-subtle)',
         'medium': 'var(--shadow-medium)',
         'strong': 'var(--shadow-strong)',
+        'hover': 'var(--shadow-hover)',
+        'elegant': 'var(--shadow-elegant)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
