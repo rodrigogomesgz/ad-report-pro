@@ -13,7 +13,7 @@ export function Tutoriais() {
       duration: "3 min",
       difficulty: "Básico",
       thumbnail: "bg-blue-100",
-      coming: false
+      coming: true
     },
     {
       title: "Conectando Meta Ads (Facebook/Instagram)",
@@ -21,7 +21,7 @@ export function Tutoriais() {
       duration: "4 min", 
       difficulty: "Básico",
       thumbnail: "bg-blue-100",
-      coming: false
+      coming: true
     },
     {
       title: "Gerando seu primeiro relatório",
@@ -29,7 +29,7 @@ export function Tutoriais() {
       duration: "5 min",
       difficulty: "Básico", 
       thumbnail: "bg-green-100",
-      coming: false
+      coming: true
     },
     {
       title: "Configurando entrega automática por email",
