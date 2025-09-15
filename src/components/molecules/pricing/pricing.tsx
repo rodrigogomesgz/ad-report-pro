@@ -65,7 +65,7 @@ export function Pricing() {
           {plans.map((plan, index) => (
             <Card 
               key={index} 
-              className={`p-8 relative ${
+              className={`p-8 flex flex-col justify-between relative ${
                 plan.highlighted 
                   ? 'shadow-strong border-primary/20 bg-gradient-to-b from-primary/5 to-transparent' 
                   : 'shadow-subtle'
