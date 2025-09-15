@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Teste",
+    name: "Plano de Teste",
     price: "R$ 1",
     period: "primeiros 7 dias",
     description: "Teste completo da plataforma",
@@ -29,7 +29,7 @@ const plans = [
       "Relatórios personalizados"
     ],
     cta: "Assinar agora",
-    highlighted: true,
+    highlighted: false,
   },
   {
     name: "Premium",
