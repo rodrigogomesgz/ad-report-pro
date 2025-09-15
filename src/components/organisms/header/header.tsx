@@ -19,11 +19,14 @@ export function Header() {
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
-              Como funciona
+              Recursos
             </a>
-            <a href="mailto:contato@relatorify.com" className="text-muted-foreground hover:text-foreground transition-colors">
+            <button onClick={() => nav.push("/precos")} className="text-muted-foreground hover:text-foreground transition-colors">
+              Preços
+            </button>
+            <button onClick={() => nav.push("/contato")} className="text-muted-foreground hover:text-foreground transition-colors">
               Contato
-            </a>
+            </button>
           </nav>
           
           {/* CTA */}
