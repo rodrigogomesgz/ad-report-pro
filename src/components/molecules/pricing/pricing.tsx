@@ -71,14 +71,7 @@ export function Pricing() {
                   : 'shadow-subtle'
               }`}
             >
-              {plan.highlighted && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
-                    Mais Popular
-                  </span>
-                </div>
-              )}
-              
+ 
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
                 <div className="mb-2">
@@ -87,6 +80,14 @@ export function Pricing() {
                 </div>
                 <p className="text-muted-foreground">{plan.description}</p>
               </div>
+               {plan.highlighted && (
+                  <div className="text-center">
+                    <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
+                      Mais Popular
+                    </span>
+                  </div>
+                )}
+              
               
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
