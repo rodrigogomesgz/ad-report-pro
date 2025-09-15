@@ -1,7 +1,9 @@
 "use client";
 import { Button } from "@/components/atoms/button";
+import { useNav } from "@/lib/navigation";
 
 export function Header() {
+  const nav = useNav();
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
@@ -29,10 +31,10 @@ export function Header() {
           
           {/* CTA */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost">
+            <Button variant="ghost" onClick={() => nav.push("/dashboard")}>
               Entrar
             </Button>
-            <Button variant="hero">
+            <Button variant="hero" onClick={() => nav.push("/connect")}>
               Começar teste
             </Button>
           </div>

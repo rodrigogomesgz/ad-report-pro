@@ -1,6 +1,9 @@
+"use client";
 import { Button } from "@/components/atoms/button";
-
+import { useNav } from "@/lib/navigation";
 export function Hero() {
+  const nav = useNav();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-subtle overflow-hidden">
       {/* Background Pattern */}
@@ -27,10 +30,20 @@ export function Hero() {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="hero" size="lg" className="min-w-[200px]">
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="min-w-[200px]"
+              onClick={() => nav.push("/connect")}
+            >
               Teste 7 dias por R$ 1
             </Button>
-            <Button variant="outline" size="lg" className="min-w-[200px]">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="min-w-[200px]"
+              onClick={() => nav.push("/dashboard")}
+            >
               Ver demonstração
             </Button>
           </div>
