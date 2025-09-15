@@ -1,4 +1,4 @@
-const Footer = () => {
+export function Footer() {
   return (
     <footer className="bg-muted/20 border-t border-border">
       <div className="container mx-auto px-4 py-12">
@@ -55,6 +55,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

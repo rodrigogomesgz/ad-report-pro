@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/atoms/button";
 
-const Hero = () => {
+export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-subtle overflow-hidden">
       {/* Background Pattern */}
@@ -44,6 +44,4 @@ const Hero = () => {
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

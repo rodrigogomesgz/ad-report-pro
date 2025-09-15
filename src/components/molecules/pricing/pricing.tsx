@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/atoms/button";
+import { Card } from "@mantine/core";
 import { Check } from "lucide-react";
 
 const plans = [
@@ -49,7 +49,7 @@ const plans = [
   },
 ];
 
-const Pricing = () => {
+export function Pricing() {
   return (
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -117,6 +117,4 @@ const Pricing = () => {
       </div>
     </section>
   );
-};
-
-export default Pricing;
+}

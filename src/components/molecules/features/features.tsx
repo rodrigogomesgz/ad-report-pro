@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui/card";
+import { Card } from "@mantine/core";
 import { BarChart3, Clock, Mail, MessageSquare, Shield, Target } from "lucide-react";
 
 const features = [
@@ -34,7 +34,7 @@ const features = [
   },
 ];
 
-const Features = () => {
+export function Features() {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -67,6 +67,4 @@ const Features = () => {
       </div>
     </section>
   );
-};
-
-export default Features;
+}
