@@ -29,7 +29,7 @@ const plans = [
       "Relatórios personalizados"
     ],
     cta: "Assinar agora",
-    highlighted: true,
+    highlighted: false,
   },
   {
     name: "Premium",
