@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Checkout from "./pages/Checkout";
 import Connect from "./pages/Connect";
+import OAuthGoogle from "./pages/OAuthGoogle";
+import OAuthMeta from "./pages/OAuthMeta";
 import Report from "./pages/Report";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +25,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/connect" element={<Connect />} />
+          <Route path="/oauth/google" element={<OAuthGoogle />} />
+          <Route path="/oauth/meta" element={<OAuthMeta />} />
           <Route path="/report" element={<Report />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

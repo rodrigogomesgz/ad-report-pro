@@ -19,23 +19,20 @@ export function Header() {
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
-              Recursos
+              Como funciona
             </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-              Preços
-            </a>
-            <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="mailto:contato@relatorify.com" className="text-muted-foreground hover:text-foreground transition-colors">
               Contato
             </a>
           </nav>
           
           {/* CTA */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" onClick={() => nav.push("/dashboard")}>
-              Entrar
+            <Button variant="ghost" onClick={() => nav.push("/connect")}>
+              Testar agora
             </Button>
-            <Button variant="hero" onClick={() => nav.push("/connect")}>
-              Começar teste
+            <Button variant="hero" onClick={() => nav.push("/checkout")}>
+              R$ 1 por 7 dias
             </Button>
           </div>
         </div>

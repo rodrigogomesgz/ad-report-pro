@@ -16,25 +16,20 @@ export function Footer() {
             </p>
           </div>
           
-          {/* Product */}
+          {/* Contato */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Produto</h4>
+            <h4 className="font-semibold text-foreground">Contato</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Recursos</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Preços</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Integrações</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">API</a></li>
-            </ul>
-          </div>
-          
-          {/* Support */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Suporte</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Documentação</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Tutoriais</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Contato</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Status</a></li>
+              <li>
+                <a href="mailto:contato@relatorify.com" className="hover:text-foreground transition-colors">
+                  contato@relatorify.com
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/5511999999999" target="_blank" className="hover:text-foreground transition-colors">
+                  WhatsApp Suporte
+                </a>
+              </li>
             </ul>
           </div>
           
@@ -42,9 +37,16 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Legal</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Privacidade</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Termos</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Cookies</a></li>
+              <li>
+                <a href="/privacidade" className="hover:text-foreground transition-colors">
+                  Política de Privacidade
+                </a>
+              </li>
+              <li>
+                <a href="/termos" className="hover:text-foreground transition-colors">
+                  Termos de Uso
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -45,7 +45,7 @@ export function ConnectTemplate() {
                 <Button 
                   variant="outline" 
                   className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                  onClick={() => nav.push("/report")}
+                  onClick={() => nav.push("/oauth/google")}
                 >
                   Conectar
                   <ArrowRight size={16} />
@@ -77,7 +77,7 @@ export function ConnectTemplate() {
                 <Button 
                   variant="outline" 
                   className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                  onClick={() => nav.push("/report")}
+                  onClick={() => nav.push("/oauth/meta")}
                 >
                   Conectar
                   <ArrowRight size={16} />
