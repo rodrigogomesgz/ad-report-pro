@@ -26,8 +26,7 @@ const plans = [
       "Tudo do plano de teste",
       "Relatórios ilimitados",
       "Entrega WhatsApp",
-      "Relatórios personalizados",
-      "Suporte prioritário",
+      "Relatórios personalizados"
     ],
     cta: "Assinar agora",
     highlighted: true,
