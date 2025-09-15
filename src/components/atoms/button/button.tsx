@@ -14,6 +14,7 @@ type Props = {
   onClick?: () => void;
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
+  loading?: boolean;
 };
 
 const variantStyles = {
@@ -36,6 +37,8 @@ export function Button({
   size = "md", 
   children, 
   className,
+  loading = false,
+  disabled,
   ...props 
 }: Props) {
   return (
@@ -46,9 +49,14 @@ export function Button({
         sizeStyles[size],
         className
       )}
+      disabled={disabled || loading}
       {...props}
     >
-      {children}
+      {loading ? (
+        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current"></div>
+      ) : (
+        children
+      )}
     </button>
   );
 }

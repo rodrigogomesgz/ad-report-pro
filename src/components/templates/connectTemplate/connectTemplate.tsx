@@ -14,10 +14,10 @@ export function ConnectTemplate() {
             <span className="text-white font-bold text-2xl">R</span>
           </div>
           <Title order={1} className="text-3xl font-bold text-foreground mb-4">
-            Conecte suas contas de anúncios
+            Conecte suas contas
           </Title>
           <Text size="lg" c="dimmed" className="max-w-lg mx-auto">
-            Conecte suas contas para começar a receber relatórios automáticos
+            Conecte Google Ads ou Meta Ads para gerar seu relatório
           </Text>
         </div>
 
@@ -45,7 +45,7 @@ export function ConnectTemplate() {
                 <Button 
                   variant="outline" 
                   className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                  onClick={() => nav.push("/setup")}
+                  onClick={() => nav.push("/report")}
                 >
                   Conectar
                   <ArrowRight size={16} />
@@ -77,7 +77,7 @@ export function ConnectTemplate() {
                 <Button 
                   variant="outline" 
                   className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                  onClick={() => nav.push("/setup")}
+                  onClick={() => nav.push("/report")}
                 >
                   Conectar
                   <ArrowRight size={16} />

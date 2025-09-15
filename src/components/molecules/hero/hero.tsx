@@ -19,13 +19,12 @@ export function Hero() {
             <span className="bg-gradient-hero bg-clip-text text-transparent">
               tráfego pago
             </span>{" "}
-            claros e profissionais
+            em PDF, sem complicação
           </h1>
           
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Conecte suas contas de anúncios e receba relatórios semanais no seu e-mail ou WhatsApp. 
-            Automatize a prestação de contas para seus clientes.
+            Conecte sua conta e receba seu relatório em minutos
           </p>
           
           {/* CTA Buttons */}
@@ -34,23 +33,23 @@ export function Hero() {
               variant="hero" 
               size="lg" 
               className="min-w-[200px]"
-              onClick={() => nav.push("/connect")}
+              onClick={() => nav.push("/checkout")}
             >
-              Teste 7 dias por R$ 1
+              Teste por R$ 1
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
               className="min-w-[200px]"
-              onClick={() => nav.push("/dashboard")}
+              onClick={() => nav.push("/connect")}
             >
-              Ver demonstração
+              Ver como funciona
             </Button>
           </div>
           
           {/* Trust Indicators */}
           <div className="text-sm text-muted-foreground space-y-2">
-            <p>Sem contrato. Cancele quando quiser.</p>
+            <p>Depois R$ 67/mês. Cancele quando quiser.</p>
             <p>Conecta com Google Ads e Meta Ads</p>
           </div>
         </div>
