@@ -1,26 +1,11 @@
 import { Card, Title, Text, TextInput, Textarea } from "@mantine/core";
 import { Button } from "@/components/atoms/button";
-import { ArrowLeft, Mail, MessageSquare, Phone } from "lucide-react";
-import { useNav } from "@/lib/navigation";
-import { Header } from "@/components/organisms/header";
-import { Footer } from "@/components/organisms/footer";
+import { Mail, MessageSquare, Phone } from "lucide-react";
+import { PageTemplate } from "@/components/templates/pageTemplate";
 
 export function Contato() {
-  const nav = useNav();
-
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      <div className="container mx-auto px-4 py-16">
-        {/* Back Button */}
-        <button 
-          onClick={() => nav.back()} 
-          className="flex items-center text-muted-foreground hover:text-foreground mb-8 transition-colors"
-        >
-          <ArrowLeft size={20} className="mr-2" />
-          Voltar
-        </button>
+    <PageTemplate>
 
         <div className="text-center mb-16">
           <Title order={1} className="text-4xl font-bold text-foreground mb-4">
@@ -92,10 +77,10 @@ export function Contato() {
                     Para dúvidas gerais e suporte técnico
                   </Text>
                   <a 
-                    href="mailto:contato@relatorify.com" 
+                    href="mailto:contato@trafegoclaro.com" 
                     className="text-primary hover:underline"
                   >
-                    contato@relatorify.com
+                    contato@trafegoclaro.com
                   </a>
                 </div>
               </div>
@@ -154,9 +139,7 @@ export function Contato() {
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
-    </div>
+    </PageTemplate>
   );
 }
 

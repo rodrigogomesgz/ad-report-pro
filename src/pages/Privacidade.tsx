@@ -43,7 +43,7 @@ export function Privacidade() {
                   Compromisso com sua Privacidade
                 </Title>
                 <Text c="dimmed">
-                  O RelatoriFy coleta apenas os dados necessários para gerar seus relatórios de tráfego pago. 
+                  O TráfegoClaro coleta apenas os dados necessários para gerar seus relatórios de tráfego pago. 
                   Não vendemos, alugamos ou compartilhamos suas informações com terceiros para fins comerciais.
                 </Text>
               </div>

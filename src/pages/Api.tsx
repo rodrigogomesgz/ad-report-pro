@@ -24,10 +24,10 @@ export function Api() {
 
         <div className="text-center mb-16">
           <Title order={1} className="text-4xl font-bold text-foreground mb-4">
-            API RelatoriFy
+            API TráfegoClaro
           </Title>
           <Text size="lg" c="dimmed" className="max-w-2xl mx-auto">
-            Integre o RelatoriFy em suas aplicações e automatize a geração de relatórios 
+            Integre o TráfegoClaro em suas aplicações e automatize a geração de relatórios 
             de tráfego pago diretamente no seu sistema.
           </Text>
         </div>
@@ -137,7 +137,7 @@ export function Api() {
             <Card className="p-6 bg-gray-900 text-white shadow-subtle hover:shadow-hover transition-all duration-300">
               <pre className="text-sm overflow-x-auto">
 {`// Gerar relatório via API
-const response = await fetch('https://api.relatorify.com/v1/reports', {
+const response = await fetch('https://api.trafegoclaro.com/v1/reports', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',

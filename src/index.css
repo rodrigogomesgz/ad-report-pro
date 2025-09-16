@@ -2,67 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
-/* RelatoriFy Design System - Clean, Professional, Corporate
-All colors MUST be HSL.
+/* Mobile Responsiveness Improvements */
+@layer utilities {
+  .mobile-title {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  .mobile-subtitle {
+    @apply text-lg md:text-xl;
+  }
+  
+  .mobile-spacing {
+    @apply py-8 md:py-12 lg:py-16;
+  }
+  
+  .mobile-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+  
+  .mobile-button {
+    @apply w-full sm:w-auto;
+  }
+  
+  .mobile-section {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+  
+  .mobile-gap {
+    @apply gap-4 md:gap-6 lg:gap-8;
+  }
+  
+  .mobile-text {
+    @apply text-sm md:text-base lg:text-lg;
+  }
+}
+
+/* TráfegoClaro Design System - Nova Paleta de Cores
+Paleta: primary: #ffffff, secondary: #2ecc40, accent: #304257, tertiary: #4C635A, quaternary: #7D7D7D, background: #122023
 */
 
 @layer base {
   :root {
-    /* Corporate Background & Surfaces */
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    /* Light Theme - Backgrounds & Surfaces */
+    --background: 0 0% 100%; /* #ffffff - primary */
+    --foreground: 210 25% 8%; /* #122023 - background */
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card: 0 0% 100%; /* #ffffff - primary */
+    --card-foreground: 210 25% 8%; /* #122023 - background */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 0 0% 100%; /* #ffffff - primary */
+    --popover-foreground: 210 25% 8%; /* #122023 - background */
 
-    /* Primary Teal - Professional & Trustworthy */
-    --primary: 186 85% 35%;
-    --primary-foreground: 0 0% 100%;
-    --primary-muted: 186 45% 85%;
+    /* Primary - White */
+    --primary: 0 0% 100%; /* #ffffff */
+    --primary-foreground: 210 25% 8%; /* #122023 */
+    --primary-muted: 0 0% 95%;
 
-    /* Secondary Blue - Corporate */
-    --secondary: 210 15% 95%;
-    --secondary-foreground: 215 25% 15%;
+    /* Secondary - Green */
+    --secondary: 142 69% 58%; /* #2ecc40 */
+    --secondary-foreground: 0 0% 100%; /* #ffffff */
 
-    /* Muted Grays - Clean & Minimal */
-    --muted: 210 15% 96%;
-    --muted-foreground: 215 15% 45%;
+    /* Accent - Dark Blue */
+    --accent: 210 25% 25%; /* #304257 */
+    --accent-foreground: 0 0% 100%; /* #ffffff */
 
-    /* Accent - Subtle Teal */
-    --accent: 186 25% 92%;
-    --accent-foreground: 186 85% 25%;
+    /* Tertiary - Dark Green */
+    --tertiary: 150 10% 30%; /* #4C635A */
+    --tertiary-foreground: 0 0% 100%; /* #ffffff */
+
+    /* Quaternary - Gray */
+    --quaternary: 0 0% 49%; /* #7D7D7D */
+    --quaternary-foreground: 0 0% 100%; /* #ffffff */
+
+    /* Muted - Text and borders */
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 49%; /* #7D7D7D */
 
     /* System Colors */
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 142 65% 45%;
+    --success: 142 69% 58%; /* #2ecc40 */
     --success-foreground: 0 0% 100%;
 
     --warning: 35 85% 55%;
     --warning-foreground: 0 0% 100%;
 
     /* Interactive Elements */
-    --border: 210 15% 88%;
-    --input: 210 15% 88%;
-    --ring: 186 85% 35%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 142 69% 58%; /* #2ecc40 */
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(186 85% 35%), hsl(210 85% 45%));
-    --gradient-subtle: linear-gradient(180deg, hsl(210 20% 98%), hsl(210 15% 96%));
+    /* Gradients - Mais sutis e profissionais */
+    --gradient-hero: linear-gradient(135deg, #2ecc40, #27a844);
+    --gradient-subtle: linear-gradient(180deg, #ffffff, #f8f9fa);
 
-    /* Shadows */
-    --shadow-subtle: 0 2px 8px -2px hsl(215 25% 15% / 0.08);
-    --shadow-medium: 0 8px 24px -4px hsl(215 25% 15% / 0.12);
-    --shadow-strong: 0 16px 48px -8px hsl(215 25% 15% / 0.16);
-    --shadow-hover: 0 12px 32px -8px hsl(215 25% 15% / 0.18);
-    --shadow-elegant: 0 10px 30px -10px hsl(186 85% 35% / 0.3);
+    /* Shadows - Suaves conforme especificação */
+    --shadow-subtle: 0 2px 8px -2px rgba(18, 32, 35, 0.08);
+    --shadow-medium: 0 8px 24px -4px rgba(18, 32, 35, 0.12);
+    --shadow-strong: 0 16px 48px -8px rgba(18, 32, 35, 0.16);
+    --shadow-hover: 0 12px 32px -8px rgba(18, 32, 35, 0.18);
+    --shadow-elegant: 0 10px 30px -10px rgba(46, 204, 64, 0.3);
 
-    /* Radius */
-    --radius: 0.75rem;
+    /* Radius - 16px conforme especificação */
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -82,58 +125,66 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark Corporate Theme */
-    --background: 215 25% 8%;
-    --foreground: 210 15% 95%;
+    /* Dark Theme - Backgrounds & Surfaces */
+    --background: 210 25% 8%; /* #122023 */
+    --foreground: 0 0% 100%; /* #ffffff */
 
-    --card: 215 20% 10%;
-    --card-foreground: 210 15% 95%;
+    --card: 210 25% 12%; /* Slightly lighter than background */
+    --card-foreground: 0 0% 100%; /* #ffffff */
 
-    --popover: 215 20% 10%;
-    --popover-foreground: 210 15% 95%;
+    --popover: 210 25% 12%; /* Slightly lighter than background */
+    --popover-foreground: 0 0% 100%; /* #ffffff */
 
-    /* Primary Teal in Dark */
-    --primary: 186 75% 45%;
-    --primary-foreground: 215 25% 8%;
-    --primary-muted: 186 25% 25%;
+    /* Primary - White in dark mode */
+    --primary: 0 0% 100%; /* #ffffff */
+    --primary-foreground: 210 25% 8%; /* #122023 */
+    --primary-muted: 0 0% 20%;
 
-    /* Dark Secondary */
-    --secondary: 215 15% 15%;
-    --secondary-foreground: 210 15% 85%;
+    /* Secondary - Green */
+    --secondary: 142 69% 58%; /* #2ecc40 */
+    --secondary-foreground: 0 0% 100%; /* #ffffff */
+
+    /* Accent - Dark Blue */
+    --accent: 210 25% 25%; /* #304257 */
+    --accent-foreground: 0 0% 100%; /* #ffffff */
+
+    /* Tertiary - Dark Green */
+    --tertiary: 150 10% 30%; /* #4C635A */
+    --tertiary-foreground: 0 0% 100%; /* #ffffff */
+
+    /* Quaternary - Gray */
+    --quaternary: 0 0% 49%; /* #7D7D7D */
+    --quaternary-foreground: 0 0% 100%; /* #ffffff */
 
     /* Dark Muted */
-    --muted: 215 15% 12%;
-    --muted-foreground: 215 10% 60%;
-
-    /* Dark Accent */
-    --accent: 186 15% 18%;
-    --accent-foreground: 186 75% 65%;
+    --muted: 210 25% 15%;
+    --muted-foreground: 0 0% 49%; /* #7D7D7D */
 
     /* Dark System Colors */
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 142 65% 50%;
+    --success: 142 69% 58%; /* #2ecc40 */
     --success-foreground: 0 0% 100%;
 
     --warning: 35 85% 60%;
     --warning-foreground: 0 0% 100%;
 
     /* Dark Interactive */
-    --border: 215 15% 18%;
-    --input: 215 15% 18%;
-    --ring: 186 75% 45%;
+    --border: 210 25% 20%;
+    --input: 210 25% 20%;
+    --ring: 142 69% 58%; /* #2ecc40 */
 
     /* Dark Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(186 75% 45%), hsl(210 75% 55%));
-    --gradient-subtle: linear-gradient(180deg, hsl(215 25% 8%), hsl(215 15% 12%));
+    --gradient-hero: linear-gradient(135deg, #2ecc40, #4C635A);
+    --gradient-subtle: linear-gradient(180deg, #122023, #1a2a2d);
 
     /* Dark Shadows */
-    --shadow-subtle: 0 2px 8px -2px hsl(0 0% 0% / 0.25);
-    --shadow-medium: 0 8px 24px -4px hsl(0 0% 0% / 0.35);
-    --shadow-strong: 0 16px 48px -8px hsl(0 0% 0% / 0.45);
-    --shadow-hover: 0 12px 32px -8px hsl(0 0% 0% / 0.4);
-    --shadow-elegant: 0 10px 30px -10px hsl(186 75% 45% / 0.4);
+    --shadow-subtle: 0 2px 8px -2px rgba(0, 0, 0, 0.25);
+    --shadow-medium: 0 8px 24px -4px rgba(0, 0, 0, 0.35);
+    --shadow-strong: 0 16px 48px -8px rgba(0, 0, 0, 0.45);
+    --shadow-hover: 0 12px 32px -8px rgba(0, 0, 0, 0.4);
+    --shadow-elegant: 0 10px 30px -10px rgba(46, 204, 64, 0.4);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

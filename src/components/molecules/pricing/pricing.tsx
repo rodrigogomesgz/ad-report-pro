@@ -1,71 +1,57 @@
 import { Button } from "@/components/atoms/button";
+import { Container } from "@/components/atoms/container";
 import { Card } from "@mantine/core";
 import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Plano de Teste",
-    price: "R$ 1",
+    name: "Teste",
+    price: "R$1",
     period: "primeiros 7 dias",
     description: "Teste completo da plataforma",
     features: [
-      "Conexão ilimitada de contas",
-      "Relatórios semanais",
+      "Relatórios de Google Ads e Meta Ads",
+      "PDF pronto para apresentação",
       "Entrega por e-mail",
-      "Suporte por chat",
+      "KPIs essenciais",
     ],
-    cta: "Começar teste",
-    highlighted: false,
+    cta: "Testar por R$1",
+    highlighted: true,
   },
   {
     name: "Profissional",
-    price: "R$ 67",
+    price: "R$67",
     period: "por mês",
     description: "Para gestores e agências",
     features: [
       "Tudo do plano de teste",
       "Relatórios ilimitados",
-      "Entrega WhatsApp",
-      "Relatórios personalizados"
+      "Gráficos e insights",
+      "Suporte prioritário"
     ],
     cta: "Assinar agora",
-    highlighted: false,
-  },
-  {
-    name: "Premium",
-    price: "R$ 87",
-    period: "por mês",
-    description: "Relatórios diários",
-    features: [
-      "Tudo do plano Profissional",
-      "Relatórios diários",
-      "Análises avançadas",
-      "API de integração",
-      "Suporte dedicado",
-    ],
-    cta: "Falar com especialista",
     highlighted: false,
   },
 ];
 
 export function Pricing() {
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+    <section className="mobile-section bg-muted/30">
+      <Container size="xl" padding="lg">
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+          <h2 className="mobile-title font-bold text-foreground mb-3 md:mb-4">
             Preços transparentes e justos
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Comece com um teste de R$ 1 e evolua conforme sua necessidade.
+          <p className="mobile-text text-muted-foreground">
+            Comece com um teste de R$1 e evolua conforme sua necessidade.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 mobile-gap max-w-4xl mx-auto">
           {plans.map((plan, index) => (
             <Card 
               key={index} 
-              className={`p-8 flex flex-col justify-between relative ${
+              className={`p-6 md:p-8 flex flex-col justify-between relative ${
                 plan.highlighted 
                   ? 'shadow-strong border-primary/20 bg-gradient-to-b from-primary/5 to-transparent' 
                   : 'shadow-subtle'
@@ -100,7 +86,7 @@ export function Pricing() {
               
               <Button 
                 variant={plan.highlighted ? "hero" : "outline"} 
-                className="w-full"
+                className="mobile-button h-12 md:h-14 text-base md:text-lg font-semibold"
                 size="lg"
               >
                 {plan.cta}
@@ -109,12 +95,12 @@ export function Pricing() {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground">
+        <div className="text-center mt-8 md:mt-12">
+          <p className="text-sm md:text-base text-muted-foreground">
             Todos os planos incluem integração com Google Ads e Meta Ads
           </p>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

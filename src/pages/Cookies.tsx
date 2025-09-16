@@ -27,7 +27,7 @@ export function Cookies() {
             Política de Cookies
           </Title>
           <Text size="lg" c="dimmed" className="max-w-2xl mx-auto">
-            Como usamos cookies e tecnologias similares para melhorar sua experiência no RelatoriFy.
+            Como usamos cookies e tecnologias similares para melhorar sua experiência no TráfegoClaro.
           </Text>
         </div>
 

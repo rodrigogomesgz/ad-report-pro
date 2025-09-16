@@ -27,7 +27,7 @@ export function Termos() {
             Termos de Uso
           </Title>
           <Text size="lg" c="dimmed" className="max-w-2xl mx-auto">
-            Condições gerais para uso da plataforma RelatoriFy e nossos serviços.
+            Condições gerais para uso da plataforma TráfegoClaro e nossos serviços.
           </Text>
         </div>
 
@@ -43,7 +43,7 @@ export function Termos() {
                   Resumo dos Termos
                 </Title>
                 <Text c="dimmed">
-                  Ao usar o RelatoriFy, você concorda em usar nossos serviços de forma responsável, 
+                  Ao usar o TráfegoClaro, você concorda em usar nossos serviços de forma responsável, 
                   pagar pelas assinaturas conforme escolhido e respeitar os direitos de propriedade intelectual.
                 </Text>
               </div>
@@ -57,7 +57,7 @@ export function Termos() {
                 1. Aceitação dos Termos
               </Title>
               <Text size="sm" c="dimmed">
-                Ao acessar e usar o RelatoriFy, você aceita estar vinculado a estes Termos de Uso. 
+                Ao acessar e usar o TráfegoClaro, você aceita estar vinculado a estes Termos de Uso. 
                 Se você não concorda com algum destes termos, não deve usar nossos serviços.
               </Text>
             </Card>
@@ -67,7 +67,7 @@ export function Termos() {
                 2. Descrição do Serviço
               </Title>
               <Text size="sm" c="dimmed" className="mb-4">
-                O RelatoriFy é uma plataforma que conecta suas contas de anúncios (Google Ads, Meta Ads) 
+                O TráfegoClaro é uma plataforma que conecta suas contas de anúncios (Google Ads, Meta Ads) 
                 e gera relatórios automatizados em formato PDF.
               </Text>
               <div className="space-y-2">
@@ -162,7 +162,7 @@ export function Termos() {
                 6. Propriedade Intelectual
               </Title>
               <Text size="sm" c="dimmed">
-                Todo o conteúdo, funcionalidades e tecnologia do RelatoriFy são propriedade nossa 
+                Todo o conteúdo, funcionalidades e tecnologia do TráfegoClaro são propriedade nossa 
                 e estão protegidos por direitos autorais, marcas registradas e outras leis de 
                 propriedade intelectual.
               </Text>
@@ -173,7 +173,7 @@ export function Termos() {
                 7. Limitação de Responsabilidade
               </Title>
               <Text size="sm" c="dimmed">
-                O RelatoriFy é fornecido "como está". Não garantimos que o serviço será 
+                O TráfegoClaro é fornecido "como está". Não garantimos que o serviço será 
                 ininterrupto ou livre de erros. Nossa responsabilidade está limitada ao 
                 valor pago pelos serviços.
               </Text>

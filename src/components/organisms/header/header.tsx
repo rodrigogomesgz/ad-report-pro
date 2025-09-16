@@ -1,19 +1,22 @@
 "use client";
 import { Button } from "@/components/atoms/button";
+import { ThemeToggle } from "@/components/atoms/themeToggle";
+import { Container } from "@/components/atoms/container";
 import { useNav } from "@/lib/navigation";
 
 export function Header() {
   const nav = useNav();
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4">
+      <Container size="xl" padding="lg">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">R</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">RelatoriFy</span>
+          <div className="flex items-center cursor-pointer" onClick={() => nav.push("/")}>
+            <img 
+              src="/logo-dark.png"
+              alt="TráfegoClaro" 
+              className="h-12"
+            />
           </div>
           
           {/* Navigation */}
@@ -31,15 +34,13 @@ export function Header() {
           
           {/* CTA */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" onClick={() => nav.push("/connect")}>
+            {/* <ThemeToggle /> */}
+            <Button variant="hero" onClick={() => nav.push("/connect")}>
               Testar agora
-            </Button>
-            <Button variant="hero" onClick={() => nav.push("/checkout")}>
-              R$ 1 por 7 dias
             </Button>
           </div>
         </div>
-      </div>
+      </Container>
     </header>
   );
 }

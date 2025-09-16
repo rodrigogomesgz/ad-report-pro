@@ -78,7 +78,7 @@ export function Documentacao() {
             Documentação
           </Title>
           <Text size="lg" c="dimmed" className="max-w-2xl mx-auto">
-            Tudo que você precisa saber para usar o RelatoriFy e gerar relatórios 
+            Tudo que você precisa saber para usar o TráfegoClaro e gerar relatórios 
             profissionais de tráfego pago.
           </Text>
         </div>

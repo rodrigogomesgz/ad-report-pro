@@ -18,11 +18,11 @@ type Props = {
 };
 
 const variantStyles = {
-  default: "bg-primary text-primary-foreground hover:bg-primary/90",
-  hero: "bg-gradient-hero text-white hover:opacity-90 shadow-medium font-semibold",
-  outline: "border border-border bg-background hover:bg-accent hover:text-accent-foreground",
-  secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-  ghost: "hover:bg-accent hover:text-accent-foreground",
+  default: "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-sm",
+  hero: "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-md font-semibold",
+  outline: "border border-border bg-background hover:bg-muted/50 hover:text-foreground",
+  secondary: "bg-muted text-muted-foreground hover:bg-muted/80",
+  ghost: "hover:bg-muted/50 hover:text-foreground",
   destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
 };
 

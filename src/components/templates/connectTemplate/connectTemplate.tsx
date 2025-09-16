@@ -1,98 +1,104 @@
 "use client";
-import { Card, Title, Text } from "@mantine/core";
-import { Button } from "@/components/atoms/button";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Card, Title, Text, Button } from "@mantine/core";
+import { CheckCircle, ArrowLeft, RefreshCw, Shield, Clock, Database, Lock } from "lucide-react";
 import { useNav } from "@/lib/navigation";
+import { AccountConnection } from "@/components/molecules/accountConnection";
+import { PageTemplate } from "@/components/templates/pageTemplate";
+import { UserAccount } from "@/services/secureAuthService";
 
 export function ConnectTemplate() {
   const nav = useNav();
+  const [connectedAccounts, setConnectedAccounts] = useState<UserAccount[]>([]);
+
+  const handleConnectionChange = (accounts: UserAccount[]) => {
+    setConnectedAccounts(accounts);
+  };
+
+  const hasConnectedAccounts = connectedAccounts.some(acc => acc.connected);
+
   return (
-    <div className="min-h-screen bg-gradient-subtle flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl animate-fade-in">
-        <div className="text-center mb-12">
+    <PageTemplate className="bg-gradient-subtle">
+
+        <div className="text-center mb-8">
           <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <span className="text-white font-bold text-2xl">R</span>
+            <Lock className="w-8 h-8 text-white" />
           </div>
           <Title order={1} className="text-3xl font-bold text-foreground mb-4">
-            Conecte suas contas
+            Conectar Contas
           </Title>
-          <Text size="lg" c="dimmed" className="max-w-lg mx-auto">
-            Conecte Google Ads ou Meta Ads para gerar seu relatório
+          <Text size="lg" c="dimmed">
+            Conecte suas contas de publicidade para gerar relatórios automáticos
           </Text>
         </div>
 
-        <div className="space-y-6">
-          {/* Google Ads */}
-          <Card className="p-8 hover:shadow-medium transition-all duration-300 cursor-pointer group">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-lg">G</span>
+        {/* Componente de Conexão de Contas */}
+        <AccountConnection onConnectionChange={handleConnectionChange} />
+
+        {/* Informações sobre Segurança */}
+        <Card className="p-6 mt-8 bg-muted/20">
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Shield className="w-5 h-5 text-secondary mr-2" />
+              <Title order={4} className="text-lg font-semibold">
+                Segurança e Privacidade
+              </Title>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Shield className="w-6 h-6 text-green-600" />
                 </div>
-                <div>
-                  <Title order={3} className="text-xl font-semibold mb-1">
-                    Google Ads
-                  </Title>
-                  <Text size="sm" c="dimmed">
-                    Conecte sua conta do Google Ads
-                  </Text>
-                </div>
+                <Text fw={600} className="mb-1">OAuth2 Seguro</Text>
+                <Text c="dimmed" size="xs">
+                  Usamos OAuth2 para autenticação segura
+                </Text>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="text-muted-foreground">
-                  <CheckCircle size={20} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="text-center">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Clock className="w-6 h-6 text-blue-600" />
                 </div>
-                <Button 
-                  variant="outline" 
-                  className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                  onClick={() => nav.push("/oauth/google")}
-                >
-                  Conectar
-                  <ArrowRight size={16} />
-                </Button>
+                <Text fw={600} className="mb-1">Temporário</Text>
+                <Text c="dimmed" size="xs">
+                  Tokens expiram automaticamente
+                </Text>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Database className="w-6 h-6 text-purple-600" />
+                </div>
+                <Text fw={600} className="mb-1">Sem Banco</Text>
+                <Text c="dimmed" size="xs">
+                  Dados não são salvos permanentemente
+                </Text>
               </div>
             </div>
-          </Card>
+          </div>
+        </Card>
 
-          {/* Meta Ads */}
-          <Card className="p-8 hover:shadow-medium transition-all duration-300 cursor-pointer group">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-lg">M</span>
-                </div>
-                <div>
-                  <Title order={3} className="text-xl font-semibold mb-1">
-                    Meta Ads
-                  </Title>
-                  <Text size="sm" c="dimmed">
-                    Conecte sua conta do Facebook/Instagram
-                  </Text>
-                </div>
+        {/* Próximos Passos */}
+        {hasConnectedAccounts && (
+          <Card className="p-6 mt-6 bg-green-50 border-green-200">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-6 h-6 text-green-600" />
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="text-muted-foreground">
-                  <CheckCircle size={20} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <Button 
-                  variant="outline" 
-                  className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                  onClick={() => nav.push("/oauth/meta")}
-                >
-                  Conectar
-                  <ArrowRight size={16} />
-                </Button>
-              </div>
+              <Title order={4} className="text-lg font-semibold mb-2 text-green-700">
+                Contas Conectadas!
+              </Title>
+              <Text c="dimmed" className="mb-4">
+                Agora você pode gerar relatórios com dados reais das suas campanhas
+              </Text>
+              <Button
+                variant="hero"
+                onClick={() => nav.push('/report')}
+                leftSection={<RefreshCw size={16} />}
+              >
+                Gerar Relatório
+              </Button>
             </div>
           </Card>
-        </div>
-
-        <div className="text-center mt-8">
-          <Text size="sm" c="dimmed">
-            Conexões seguras via OAuth. Seus dados estão protegidos.
-          </Text>
-        </div>
-      </div>
-    </div>
+        )}
+    </PageTemplate>
   );
 }

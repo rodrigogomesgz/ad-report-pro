@@ -42,7 +42,7 @@ export function Status() {
     {
       name: "Dashboard Web",
       status: "operational",
-      description: "Interface web do RelatoriFy",
+      description: "Interface web do TráfegoClaro",
       uptime: "100%"
     }
   ];

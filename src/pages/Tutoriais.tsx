@@ -78,7 +78,7 @@ export function Tutoriais() {
             Tutoriais em Vídeo
           </Title>
           <Text size="lg" c="dimmed" className="max-w-2xl mx-auto">
-            Aprenda a usar o RelatoriFy com nossos tutoriais passo a passo. 
+            Aprenda a usar o TráfegoClaro com nossos tutoriais passo a passo. 
             Do básico ao avançado, tudo explicado de forma clara e prática.
           </Text>
         </div>

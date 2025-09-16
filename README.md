@@ -1,73 +1,118 @@
-# Welcome to your Lovable project
+# TráfegoClaro
 
-## Project info
+Relatórios automáticos de tráfego pago claros e profissionais.
 
-**URL**: https://lovable.dev/projects/903b49a2-1e68-4fd4-a723-f92fddef4114
+## Sobre o Projeto
 
-## How can I edit this code?
+TráfegoClaro é uma solução profissional para gestores de tráfego pago, e-commerces, pequenos negócios e agências que precisam de relatórios automatizados de Google Ads e Meta Ads.
 
-There are several ways of editing your application.
+### Proposta de Valor
 
-**Use Lovable**
+- Gere relatórios de Google Ads e Meta Ads em minutos, sem planilhas
+- PDF pronto para apresentação, com KPIs e gráficos essenciais  
+- Fluxo simples: conectar → gerar → baixar/enviar
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/903b49a2-1e68-4fd4-a723-f92fddef4114) and start prompting.
+### Funcionalidades
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Conexão OAuth**: Integração segura com Google Ads e Meta Ads
+- **Relatórios PDF**: Documentos profissionais prontos para apresentação
+- **KPIs Essenciais**: Investimento, ROAS, CTR, CPA, Clicks, Impressões, Conversões
+- **Entrega Automática**: Por e-mail com opção de expansão para WhatsApp
+- **Interface Limpa**: Design profissional sem emojis, focado na clareza
 
-**Use your preferred IDE**
+## Tecnologias
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Este projeto utiliza:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **React 18** com TypeScript
+- **Vite** para build e desenvolvimento
+- **React Router DOM** para navegação
+- **Tailwind CSS** para estilização
+- **Mantine** para componentes UI
+- **Shadcn/ui** para componentes base
+- **Lucide React** para ícones
+- **@tanstack/react-query** para gerenciamento de estado
+- **Puppeteer** e **@sparticuz/chromium** para geração de PDF
+- **Resend** para envio de e-mails
 
-Follow these steps:
+## Estrutura do Projeto
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```
+src/
+├── components/           # Componentes organizados por estrutura molecular
+│   ├── atoms/           # Componentes básicos (button, kpiCard, textInput)
+│   ├── molecules/       # Combinações de atoms (hero, pricing, features)
+│   ├── organisms/       # Seções complexas (header, footer, reportsTable)
+│   ├── templates/       # Layouts de página (landing, connect, dashboard)
+│   └── ui/             # Componentes shadcn/ui
+├── pages/              # Páginas da aplicação
+├── hooks/              # Custom hooks
+├── lib/                # Utilitários e configurações
+└── types/              # Definições de tipos TypeScript
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Instalação e Desenvolvimento
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+# Clonar o repositório
+git clone <URL_DO_REPOSITORIO>
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Navegar para o diretório
+cd ad-report-pro
+
+# Instalar dependências
+npm install
+
+# Iniciar servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Scripts Disponíveis
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Gera build de produção
+- `npm run build:dev` - Gera build em modo desenvolvimento
+- `npm run lint` - Executa linting do código
+- `npm run preview` - Preview do build de produção
 
-**Use GitHub Codespaces**
+## Convenções de Código
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Nomenclatura
+- **Arquivos/Pastas**: camelCase (ex.: `reportsTable.tsx`, `kpiCard.tsx`)
+- **Componentes**: PascalCase (ex.: `ReportsTable`, `KpiCard`)
+- **Hooks**: usePrefix (ex.: `useNav`, `useAdsConnections`)
+- **Types**: PascalCase (ex.: `ReportSummary`)
 
-## What technologies are used for this project?
+### Estrutura de Componentes
+- Organização molecular: atoms → molecules → organisms → templates
+- Imports absolutos via `@/*` (configurado no tsconfig)
+- Componentes server-side por padrão, `"use client"` apenas quando necessário
 
-This project is built with:
+### Design System
+- Paleta de cores profissional com tons calmos
+- Tema claro e escuro suportado
+- Shadows suaves e border-radius de 16px
+- Tipografia Inter com pesos consistentes
+- Sem uso de emojis na interface
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Roadmap
 
-## How can I deploy this project?
+### MVP (Atual)
+- [x] Landing page profissional
+- [x] Fluxo de checkout (Stripe)
+- [x] Conexão OAuth (Google Ads e Meta Ads)
+- [x] Geração de relatórios PDF
+- [x] Envio por e-mail
+- [x] Interface responsiva e acessível
 
-Simply open [Lovable](https://lovable.dev/projects/903b49a2-1e68-4fd4-a723-f92fddef4114) and click on Share -> Publish.
+### Próximas Funcionalidades
+- [ ] Integração completa com APIs do Google Ads e Meta Ads
+- [ ] Banco de dados (Supabase) para histórico
+- [ ] Agendamento automático de relatórios
+- [ ] Envio via WhatsApp
+- [ ] Dashboard de histórico
+- [ ] Relatórios personalizáveis
 
-## Can I connect a custom domain to my Lovable project?
+## Licença
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Este projeto está sob licença proprietária. Todos os direitos reservados.

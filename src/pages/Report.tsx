@@ -1,171 +1,99 @@
 "use client";
 import { useState } from "react";
-import { Card, Title, Text, TextInput } from "@mantine/core";
+import { Card, Title, Text, TextInput, Tabs } from "@mantine/core";
 import { Button } from "@/components/atoms/button";
-import { Download, Mail, FileText, ArrowLeft } from "lucide-react";
+import { Download, Mail, FileText, ArrowLeft, Settings, BarChart3 } from "lucide-react";
 import { useNav } from "@/lib/navigation";
+import { ReportTemplate } from "@/components/templates/reportTemplate";
+import { ReportBuilder } from "@/components/organisms/reportBuilder";
+import { Container } from "@/components/atoms/container";
+import { generatePdfFromSelector } from "@/lib/pdf";
 
 export function Report() {
   const nav = useNav();
-  const [isGenerating, setIsGenerating] = useState(false);
-  const [reportGenerated, setReportGenerated] = useState(false);
-  const [reportUrl, setReportUrl] = useState<string>("");
-  const [email, setEmail] = useState("");
-  const [isSendingEmail, setIsSendingEmail] = useState(false);
-
-  const handleGenerateReport = async () => {
-    setIsGenerating(true);
-    try {
-      // Mock for MVP - simulate PDF generation
-      setTimeout(() => {
-        setReportGenerated(true);
-        setReportUrl("#mock-report"); // Mock URL
-        setIsGenerating(false);
-      }, 3000);
-    } catch (error) {
-      console.error("Error generating report:", error);
-      setIsGenerating(false);
-    }
-  };
-
-  const handleSendEmail = async () => {
-    if (!email) return;
-    
-    setIsSendingEmail(true);
-    try {
-      // Mock for MVP
-      setTimeout(() => {
-        setIsSendingEmail(false);
-        alert("Relatório enviado para seu email!");
-      }, 2000);
-    } catch (error) {
-      console.error("Error sending email:", error);
-      setIsSendingEmail(false);
-    }
-  };
+  const [activeTab, setActiveTab] = useState<string | null>("builder");
 
   return (
-    <div className="min-h-screen bg-gradient-subtle flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl animate-fade-in">
-        {/* Back Button */}
-        <button 
-          onClick={() => nav.back()} 
-          className="flex items-center text-muted-foreground hover:text-foreground mb-6 transition-colors"
-        >
-          <ArrowLeft size={20} className="mr-2" />
-          Voltar
-        </button>
-
-        <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <FileText className="w-8 h-8 text-white" />
-          </div>
-          <Title order={1} className="text-3xl font-bold text-foreground mb-4">
-            Gerar Relatório
-          </Title>
-          <Text size="lg" c="dimmed">
-            Seu relatório será gerado com os dados mais recentes
-          </Text>
-        </div>
-
-        <Card className="p-8 shadow-medium">
-          {!reportGenerated ? (
-            <div className="text-center">
-              <div className="mb-6">
-                <Text fw={600} size="lg" className="mb-2">
-                  Contas conectadas:
-                </Text>
-                <div className="flex justify-center gap-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <Text size="sm">Google Ads</Text>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <Text size="sm">Meta Ads</Text>
-                  </div>
-                </div>
-              </div>
-
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="w-full"
-                onClick={handleGenerateReport}
-                loading={isGenerating}
+    <div className="min-h-screen bg-gradient-subtle">
+      {/* Header */}
+      <div className="bg-background/80 backdrop-blur-md border-b border-border">
+        <Container padding="md">
+          <div className="py-6 pt-8">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <button 
+                onClick={() => nav.back()} 
+                className="flex items-center text-muted-foreground hover:text-foreground transition-colors"
               >
-                {isGenerating ? "Gerando relatório..." : "Gerar Relatório PDF"}
-              </Button>
-
-              {isGenerating && (
-                <Text size="sm" c="dimmed" className="mt-4">
-                  Coletando dados e gerando PDF... isso pode levar alguns minutos
-                </Text>
-              )}
+                <ArrowLeft size={20} className="mr-2" />
+                Voltar
+              </button>
+              <div className="h-6 w-px bg-border"></div>
+              <Title order={2} className="text-xl font-semibold">
+                Relatórios
+              </Title>
             </div>
-          ) : (
-            <div className="space-y-6">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FileText className="w-8 h-8 text-green-600" />
-                </div>
-                <Text fw={600} size="lg" className="mb-2">
-                  Relatório gerado com sucesso!
-                </Text>
-                <Text size="sm" c="dimmed">
-                  Período: {new Date().toLocaleDateString()} - {new Date().toLocaleDateString()}
-                </Text>
-              </div>
-
-              <div className="space-y-4">
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="w-full"
-                  onClick={() => window.open(reportUrl, "_blank")}
-                >
-                  <Download size={16} className="mr-2" />
-                  Download PDF
-                </Button>
-
-                <div className="space-y-3">
-                  <Text fw={600} size="sm">Enviar por email:</Text>
-                  <div className="flex gap-2">
-                    <TextInput
-                      placeholder="seu@email.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.currentTarget.value)}
-                      className="flex-1"
-                    />
-                    <Button 
-                      variant="outline"
-                      onClick={handleSendEmail}
-                      loading={isSendingEmail}
-                      disabled={!email}
-                    >
-                      <Mail size={16} />
-                    </Button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t">
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  className="w-full"
-                  onClick={() => {
-                    setReportGenerated(false);
-                    setReportUrl("");
-                  }}
-                >
-                  Gerar novo relatório
-                </Button>
-              </div>
-            </div>
-          )}
-        </Card>
+          </div>
+          </div>
+        </Container>
       </div>
+
+      {/* Tabs */}
+      <Container padding="lg">
+        <div className="py-6">
+        <Tabs value={activeTab} onChange={setActiveTab}>
+          <Tabs.List className="mb-6">
+            <Tabs.Tab 
+              value="builder" 
+              leftSection={<Settings className="w-4 h-4" />}
+            >
+              Construtor de Relatórios
+            </Tabs.Tab>
+            <Tabs.Tab 
+              value="simple" 
+              leftSection={<BarChart3 className="w-4 h-4" />}
+            >
+              Relatório Simples
+            </Tabs.Tab>
+          </Tabs.List>
+
+          <Tabs.Panel value="builder">
+            <ReportBuilder />
+          </Tabs.Panel>
+
+          <Tabs.Panel value="simple">
+            <Container size="lg">
+              <Card className="p-8 shadow-medium">
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <FileText className="w-8 h-8 text-white" />
+                  </div>
+                  <Title order={2} className="text-2xl font-bold text-foreground mb-4">
+                    Relatório Simples
+                  </Title>
+                  <Text size="lg" c="dimmed">
+                    Geração rápida de relatório com configurações básicas
+                  </Text>
+                </div>
+
+                <div className="text-center">
+                  <Text c="dimmed" className="mb-6">
+                    Use o Construtor de Relatórios para opções avançadas e personalização completa.
+                  </Text>
+                  <Button 
+                    variant="outline" 
+                    onClick={() => setActiveTab("builder")}
+                    leftSection={<Settings className="w-4 h-4" />}
+                  >
+                    Ir para Construtor
+                  </Button>
+                </div>
+              </Card>
+            </Container>
+          </Tabs.Panel>
+        </Tabs>
+        </div>
+      </Container>
     </div>
   );
 }
