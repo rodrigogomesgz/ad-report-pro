@@ -8,7 +8,7 @@ import {
   ReportSection,
   ReportGenerationRequest 
 } from "@/types/reports";
-import { DataService } from "./dataService";
+import { dataService } from "./dataService";
 
 // Dados mockados para MVP
 const mockKpis: BaseKpi[] = [
@@ -116,7 +116,7 @@ export class ReportService {
     const reportId = `traffic_${Date.now()}`;
 
     // Em produção, coletar dados reais das APIs
-    const dataService = DataService.getInstance();
+    // dataService já importado
     let kpis = mockKpis;
     let chartData = mockChartData;
     let tableData = mockTableData;
@@ -127,13 +127,25 @@ export class ReportService {
     // Se as APIs estiverem configuradas, coletar dados reais
     try {
       if (request.platform === 'google' || request.platform === 'both') {
-        const googleData = await dataService.collectGoogleAdsData(period, '1234567890');
+        // Em produção, usar tokens reais do usuário
+        const googleData = await dataService.collectGoogleAdsData(period, '1234567890', 'mock_access_token', 'mock_refresh_token');
         // Processar dados do Google Ads
+        if (googleData.campaigns.length > 0) {
+          totalSpend = googleData.metrics.totalCost;
+          totalConversions = googleData.metrics.totalConversions;
+          averageROAS = googleData.metrics.averageRoas;
+        }
       }
       
       if (request.platform === 'meta' || request.platform === 'both') {
-        const metaData = await dataService.collectMetaAdsData(period, 'act_1234567890');
+        // Em produção, usar tokens reais do usuário
+        const metaData = await dataService.collectMetaAdsData(period, 'act_1234567890', 'mock_access_token');
         // Processar dados do Meta Ads
+        if (metaData.campaigns.length > 0) {
+          totalSpend = metaData.metrics.totalSpend;
+          totalConversions = metaData.metrics.totalConversions;
+          averageROAS = metaData.metrics.averageRoas;
+        }
       }
     } catch (error) {
       console.warn('Using mock data due to API error:', error);
